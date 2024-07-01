@@ -39,6 +39,10 @@
 
 // Button 
 .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     height: 46px;
     padding: 0 20px;
     border-radius: 6px;
@@ -48,8 +52,10 @@
     font-weight: 500;
     user-select: none;
 
-    +.btn {
-        margin-left: 20px;
+    +.btn {   
+        &:not(.btn--no-margin) {
+            margin-left: 20px;
+        }
     }
 
     &--text {
@@ -72,6 +78,15 @@
         border-radius: 99px;
     }
 
+    &--small {
+        height: 40px;
+    }
+
+    &--danger {
+        color: #fff;
+        background: #ed4337;
+    }
+    
     &[disabled], &--disabled {
         opacity: 0.5;
         pointer-events: none;
